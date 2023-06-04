@@ -7,6 +7,6 @@ diesel::table! {
         hit_points -> Int4,
         attack -> Int4,
         defense -> Int4,
-        created_at -> Timestamp,
+        created_at -> Timestamptz,
     }
 }

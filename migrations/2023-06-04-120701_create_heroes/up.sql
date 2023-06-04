@@ -4,5 +4,5 @@ CREATE TABLE IF NOT EXISTS "heroes" (
     hit_points INTEGER NOT NULL,
     attack INTEGER NOT NULL,
     defense INTEGER NOT NULL,
-    created_at TIMESTAMP NOT NULL
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );

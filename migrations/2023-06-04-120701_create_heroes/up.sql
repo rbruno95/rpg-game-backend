@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS "heroes" (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR UNIQUE NOT NULL,
+    hit_points INTEGER NOT NULL,
+    attack INTEGER NOT NULL,
+    defense INTEGER NOT NULL,
+    created_at TIMESTAMP NOT NULL
+);

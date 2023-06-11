@@ -1,8 +1,8 @@
-pub mod get;
-
 use crate::schema;
 
 use {diesel::prelude::*, serde::Serialize};
+
+pub mod get;
 
 #[derive(Serialize, Queryable, Selectable)]
 #[diesel(table_name = schema::heroes)]

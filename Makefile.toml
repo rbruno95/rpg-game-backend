@@ -1,0 +1,8 @@
+[tasks.run-migrations]
+script = "diesel database reset"
+
+[tasks.seed-db]
+script = "psql rpg_game < seed.sql"
+
+[tasks.reset-db]
+dependencies = ["run-migrations", "seed-db"]

@@ -1,8 +1,9 @@
+#[macro_use]
+extern crate dotenv_codegen;
+
 use {
     axum::{routing::get, Router},
-    dotenvy::dotenv,
     lazy_static::lazy_static,
-    std::env,
 };
 
 mod diesel_helpers;
@@ -10,10 +11,7 @@ mod heroes;
 mod schema;
 
 lazy_static! {
-    static ref SERVICE_PATH: String = {
-        dotenv().ok();
-        env::var("SERVICE_PATH").expect("SERVICE_PATH must be set")
-    };
+    static ref SERVICE_PATH: &'static str = dotenv!("SERVICE_PATH");
 }
 
 #[tokio::main]

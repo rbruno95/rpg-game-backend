@@ -1,6 +1,6 @@
 use crate::schema;
 
-use {diesel::prelude::*, serde::Serialize};
+use {chrono::NaiveDateTime, diesel::prelude::*, serde::Serialize};
 
 pub mod get;
 
@@ -12,4 +12,5 @@ pub struct Hero {
     hit_points: i32,
     attack: i32,
     defense: i32,
+    created_at: NaiveDateTime,
 }

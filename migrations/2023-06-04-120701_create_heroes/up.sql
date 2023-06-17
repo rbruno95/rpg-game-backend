@@ -6,3 +6,5 @@ CREATE TABLE IF NOT EXISTS "heroes" (
     defense INTEGER NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+CREATE UNIQUE INDEX heroes_index ON heroes(id);

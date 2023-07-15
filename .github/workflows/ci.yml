@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: rustup update stable && rustup default stable
       - run: cargo check --verbose
 
   test:
@@ -20,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: rustup update stable && rustup default stable
       - run: cargo test --verbose
 
   fmt:
@@ -29,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: rustup update stable && rustup default stable
       - run: cargo fmt --all -- --check
 
   clippy:
@@ -38,5 +35,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: rustup update stable && rustup default stable
       - run: cargo clippy -- -D warnings

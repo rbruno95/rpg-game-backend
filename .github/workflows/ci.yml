@@ -15,6 +15,7 @@ jobs:
       - run: cargo check --verbose
 
   test:
+    needs: check
     name: Test Suite
     runs-on: ubuntu-latest
     steps:
@@ -23,6 +24,7 @@ jobs:
       - run: cargo test --verbose
 
   fmt:
+    needs: check
     name: Rustfmt
     runs-on: ubuntu-latest
     steps:
@@ -31,6 +33,7 @@ jobs:
       - run: cargo fmt --all -- --check
 
   clippy:
+    needs: check
     name: Clippy
     runs-on: ubuntu-latest
     steps:

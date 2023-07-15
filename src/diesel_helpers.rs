@@ -1,10 +1,12 @@
 use {
     diesel::{pg::PgConnection, prelude::*},
     lazy_static::lazy_static,
+    std::env,
 };
 
 lazy_static! {
-    static ref DATABASE_URL: &'static str = dotenv!("DATABASE_URL");
+    static ref DATABASE_URL: String =
+        env::var("DATABASE_URL").expect("DATABASE_URL not found in the environment variables");
 }
 
 pub fn db() -> PgConnection {

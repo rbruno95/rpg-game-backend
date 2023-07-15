@@ -6,8 +6,8 @@ use {
     lazy_static::lazy_static,
 };
 
+mod characters;
 mod diesel_helpers;
-mod heroes;
 mod schema;
 
 lazy_static! {
@@ -16,7 +16,7 @@ lazy_static! {
 
 #[tokio::main]
 async fn main() {
-    let app = Router::new().route("/heroes", get(heroes::get::perform));
+    let app = Router::new().route("/characters", get(characters::get::perform));
 
     axum::Server::bind(&SERVICE_PATH.parse().unwrap())
         .serve(app.into_make_service())

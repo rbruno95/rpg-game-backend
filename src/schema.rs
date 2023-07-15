@@ -1,12 +1,10 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
-    heroes (id) {
+    characters (id) {
         id -> Int4,
+        #[max_length = 50]
         name -> Varchar,
-        hit_points -> Int4,
-        attack -> Int4,
-        defense -> Int4,
         created_at -> Timestamptz,
     }
 }
